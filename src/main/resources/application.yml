@@ -1,0 +1,11 @@
+spring:
+    application:
+      name: ssob
+  # DataSource Config
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/ssob_schema
+      username: root
+      password: Miku5239
+server:
+  port: 8080
