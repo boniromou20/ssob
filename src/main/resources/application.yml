@@ -9,3 +9,6 @@ spring:
       password: Miku5239
 server:
   port: 8080
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
