@@ -3,6 +3,8 @@ package com.boniromou.ssob.service;
 import com.boniromou.ssob.model.domain.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
 * @author pou_pou_poi
 * @description 针对表【user】的数据库操作Service
@@ -18,4 +20,13 @@ public interface UserService extends IService<User> {
      */
     long userRegister(String userAccount, String userPassword, String checkPassword);
 
+    /**
+     * user Login
+     *
+     * @param userAccount
+     * @param userPassword
+     * @param request
+     * @return
+     */
+    User userLogin(String userAccount, String userPassword, HttpServletRequest request);
 }
