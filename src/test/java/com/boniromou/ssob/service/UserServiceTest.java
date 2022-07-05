@@ -2,11 +2,13 @@ package com.boniromou.ssob.service;
 import java.util.Date;
 
 import com.boniromou.ssob.model.domain.User;
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
@@ -57,5 +59,12 @@ class UserServiceTest {
         userAccount = "testadmin";
         result = userService.userRegister(userAccount, userPassword, checkPassword);
         Assertions.assertEquals(-1, result);
+        //success
+        userAccount = "testadmin1";
+        userPassword = "Cc123456";
+        checkPassword = "Cc123456";
+        result = userService.userRegister(userAccount, userPassword, checkPassword);
+        Assertions.assertEquals(3, result);
     }
+
 }

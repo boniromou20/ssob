@@ -1,7 +1,9 @@
-package com.boniromou.ssob.model.domain;
+package generator.domain;
 
-import com.baomidou.mybatisplus.annotation.*;
-
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
@@ -30,13 +32,13 @@ public class User implements Serializable {
     private String username;
 
     /**
-     *
+     * icon link
 
      */
     private String avatarUrl;
 
     /**
-     * icon link
+     * 
      */
     private Integer gender;
 
@@ -68,11 +70,19 @@ public class User implements Serializable {
     /**
      * 
      */
-    @TableLogic
     private Integer isDelete;
 
+    /**
+     * 
+     */
     private String phone;
 
+    /**
+     * user role:
+        0 - user
+        1 - admin
+
+     */
     private Integer userRole;
 
     @TableField(exist = false)
